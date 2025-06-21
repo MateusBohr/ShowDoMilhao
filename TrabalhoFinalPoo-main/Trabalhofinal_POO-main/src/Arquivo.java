@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-
+import java.nio.charset.StandardCharsets;
 public class Arquivo implements ManipulaArquivos {
     @Override
     public void gerarRanking(Jogador jogador) {
@@ -11,9 +11,9 @@ public class Arquivo implements ManipulaArquivos {
 
         boolean arquivoExiste = file.exists();
         try {
-            PrintWriter writer = new PrintWriter(new FileWriter(csvfile, true));
+            PrintWriter writer = new PrintWriter(new FileWriter(csvfile,StandardCharsets.UTF_8, true));
             if (!arquivoExiste) {
-                writer.println("Nome, Premio");
+                writer.println("Nome, Prêmio");
             }
             writer.println(jogador.getNome() + "," + jogador.getPremio());
             writer.close();
