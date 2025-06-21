@@ -1,0 +1,45 @@
+# Default ignored files
+
+# IntelliJ IDEA project files
+# Ignora a pasta .idea/ que contém as configurações do projeto, caches, etc.
+# Ignora arquivos .iml, .ipr, .iws que são específicos do IntelliJ.
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Java compiled files and build artifacts
+# Ignora a pasta 'out/' que o IntelliJ usa para classes compiladas e artefatos.
+# Ignora a pasta 'target/' (comum em projetos Maven).
+# Ignora a pasta 'build/' (comum em projetos Gradle).
+# Ignora todos os arquivos .class (bytecode Java).
+# Ignora arquivos JAR, WAR e EAR que são artefatos de build.
+out/
+target/
+build/
+*.class
+*.jar
+*.war
+*.ear
+
+# Log files
+# Ignora qualquer arquivo de log gerado.
+*.log
+
+# Operating System Files
+# Arquivos gerados por sistemas operacionais (macOS, Linux/macOS, Windows).
+.DS_Store
+.Trash/
+Thumbs.db
+
+# Other common ignored files
+# Arquivos temporários e de backup.
+*.swp
+*.bak
+
+# Data files
+# Ignora o arquivo Ranking.csv que provavelmente é gerado ou modificado pelo seu programa.
+Ranking.csv
+
+# Note: As linhas /shelf/ e /workspace.xml eram para PyCharm e foram removidas
+# Pois já estão cobertas por .idea/ ou não são relevantes para IntelliJ.
