@@ -25,7 +25,7 @@ public class Milhao extends Jogo {
 
             System.out.println("\nPergunta " + (i + 1) + ":");
             System.out.println(p.getPergunta());
-            //Analise essa parte chat
+            //Inicia o processo de perguntar ao jogador se ele quer continuar ou desistir
             if(i>13){
                 System.out.println("Deseja continuar?");
                 System.out.println("Você tem um prêmio de: "+jogador.getPremio());
@@ -96,7 +96,7 @@ public class Milhao extends Jogo {
         System.out.println("PARABÉNS! Você ganhou o prêmio máximo de R$1.000.000!");
         resultado();
     }
-
+    //Metodo para criação do csv que irá guardar as infos da jogatina
     @Override
     public void resultado() {
         arquivo.gerarRanking(jogador);
