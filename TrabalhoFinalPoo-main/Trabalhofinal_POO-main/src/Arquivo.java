@@ -13,7 +13,7 @@ public class Arquivo implements ManipulaArquivos {
         try {
             PrintWriter writer = new PrintWriter(new FileWriter(csvfile, true));
             if (!arquivoExiste) {
-                writer.println("Nome, Prêmio");
+                writer.println("Nome, Premio");
             }
             writer.println(jogador.getNome() + "," + jogador.getPremio());
             writer.close();
