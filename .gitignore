@@ -1,0 +1,27 @@
+# Ignora TUDO por padrão
+*
+
+# Exceções (o que será commitado)
+!.gitignore
+!src/
+
+# ---- Regras extras para segurança (opcional) ----
+# Arquivos de IDE/compilação (redundantes, mas úteis se a regra '*' falhar)
+.idea/
+*.iml
+out/
+target/
+build/
+*.class
+*.jar
+*.war
+
+# Arquivos de sistema/temporários
+.DS_Store
+Thumbs.db
+*.log
+*.bak
+*.swp
+
+# Dados gerados pelo programa (exemplo)
+Ranking.csv
