@@ -7,5 +7,5 @@ public abstract class Jogo {
     List<PerguntasRespostas> perguntasUsadas = new ArrayList<>();
 
     public abstract void jogar();
-    public abstract void resultado();
+    public abstract void resultadoReinicio();
 }

@@ -35,7 +35,7 @@ public class Milhao extends Jogo {
                 if(escolha!=1){
                     System.out.println("Fim de jogo, obrigado por jogar até aqui!");
                     System.out.println("Você juntou um prêmio de: R$" + jogador.getPremio());
-                    resultado();
+                    resultadoReinicio();
                     return;
                 }else{
                     System.out.println("Boa sorte, vamos continuar o jogo");
@@ -89,16 +89,30 @@ public class Milhao extends Jogo {
                 System.out.println("A resposta correta era: " + p.getAlternativaCorreta());
                 System.out.println("Você juntou um prêmio de: R$" + jogador.getPremio());
                 System.out.println("Fim do jogo. Obrigado por participar!");
-                resultado();
+                resultadoReinicio();
                 return;
             }
         }
         System.out.println("PARABÉNS! Você ganhou o prêmio máximo de R$1.000.000!");
-        resultado();
+        resultadoReinicio();
     }
     //Metodo para criação do csv que irá guardar as infos da jogatina
+    //E para poder jogar novamente caso o jogador queira
     @Override
-    public void resultado() {
-        arquivo.gerarRanking(jogador);
+    public void resultadoReinicio() {
+        System.out.println("Quer jogar novamente ou desafiar um amigo? Digite 1 e vamos juntos nessa!");
+        int jogarNovamente = scanner.nextInt();
+        boolean sucesso = arquivo.gerarRanking(jogador);
+        if(jogarNovamente == 1 & sucesso == true){
+            scanner.nextLine();//Estavamos passando por um erro de a primeira pergunta da nova rodada ser inválida,isso consome e resolve
+            System.out.print("Digite seu nome: ");
+            String nomeJogador = scanner.nextLine();
+            this.jogador = new Jogador();
+            this.jogador.setNome(nomeJogador);
+            this.perguntas = BancoDePerguntas.carregarPerguntas();
+            jogar();
+        }else{
+            System.out.println("Não quero jogar novamente");
+        }
     }
 }

@@ -1,3 +1,3 @@
 public interface ManipulaArquivos {
-    void gerarRanking(Jogador jogador);
+    boolean gerarRanking(Jogador jogador);
 }
